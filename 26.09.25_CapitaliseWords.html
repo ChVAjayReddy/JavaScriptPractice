@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function capitalizeWords(str) {
+      let newstr = str.replace(/\s+/g, " ").trim().split(" ");
+      let output = [];
+      for (let word of newstr) {
+        let newword = "";
+        for (let i = 0; i < word.length; i++) {
+          i == 0
+            ? (newword += word[i].toUpperCase())
+            : (newword += word[i].toLowerCase());
+        }
+        output.push(newword);
+      }
+      console.log(output.join(" "));
+    }
+    capitalizeWords("           hello        world             ");
+  </script>
+</html>
