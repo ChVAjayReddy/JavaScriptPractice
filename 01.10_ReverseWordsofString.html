@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // function reverseWords(s) {
+      //   console.log(
+      //     s.trim().replace(/\s+/g, " ").split(" ").reverse().join(" ")
+      //   );
+      // }
+
+      // reverseWords("the sky          is blue           ");
+      function reverseWords(s) {
+        let newstr = s.split(" ").filter((word) => word != "");
+        for (let i = reverse.length - 1; i >= 0; i--) {
+          newstr += reverse[i];
+          if (i != 0) {
+            newstr += " ";
+          }
+        }
+        return newstr;
+      }
+
+      reverseWords(" the sky is        blue");
+    </script>
+  </body>
+</html>
