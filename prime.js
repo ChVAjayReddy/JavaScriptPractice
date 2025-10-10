@@ -11,4 +11,5 @@ function prime(num) {
 
   return true;
 }
-console.log(prime(17));
+let a = { name: "ajay", age: "28" };
+console.log(a);
