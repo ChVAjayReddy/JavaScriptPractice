@@ -13,7 +13,7 @@ function BalanceIndex(arr) {
   }
   return -1;
 }
-console.log(BalanceIndex([2, 3, -1, 8, 4]));
+console.log(BalanceIndex([1, 2, 3, 4, -1]));
 //Q2️⃣: Group Characters by Occurrence
 function GroupCharacters(str) {
   let result = "";
@@ -44,4 +44,4 @@ function GroupCharacters(str) {
   } while (count !== 0);
   return result;
 }
-console.log(GroupCharacters("aaabbcddddd"));
+console.log(GroupCharacters("palasupriya"));
