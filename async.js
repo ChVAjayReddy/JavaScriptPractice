@@ -291,23 +291,69 @@
 // fetchWithRetry("https://jsonplaceholder.typicode.com/posts-invalid", 3);
 //Q7 — Timeout Error using Promise.race() (Advanced)
 //Q10 — Custom Validation Error
-function validateuser(user) {
-  return new Promise((resove, reject) => {
-    if (user.name == "") {
-      reject("Name is requred");
-    } else if (user.email == "") {
-      reject("Email is requred");
-    } else {
-      resove("User Registered");
-    }
-  });
-}
-async function registerUser(user) {
-  try {
-    const res = await validateuser(user);
-    console.log(res);
-  } catch (error) {
-    console.log(error);
+// function validateuser(user) {
+//   return new Promise((resove, reject) => {
+//     if (user.name == "") {
+//       reject("Name is requred");
+//     } else if (user.email == "") {
+//       reject("Email is requred");
+//     } else {
+//       resove("User Registered");
+//     }
+//   });
+// }
+// async function registerUser(user) {
+//   try {
+//     const res = await validateuser(user);
+//     console.log(res);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+// registerUser({ name: "Ajay", email: "" }); //asynch await
+
+// function isFizzBuzz(sequence) {
+//   for (let i = 0; i < sequence.length; i++) {
+//     if ((i + 1) % 3 == 0 && (i + 1) % 3 == 0) {
+//       if (sequence[i] !== "FizzBuzz") {
+//         return false;
+//       }
+//     } else if ((i + 1) % 3 == 0) {
+//       if (sequence[i] !== "Fizz") {
+//         return false;
+//       }
+//     } else if ((i + 1) % 5 == 0) {
+//       if (sequence[i] !== "Buzz") {
+//         return false;
+//       }
+//     } else {
+//       if (sequence[i] !== i + 1) {
+//         return false;
+//       }
+//     }
+//   }
+
+//   return true;
+// }
+// console.log(isFizzBuzz([1, 2, "Fizz", 4]));
+// function calculateAge(birthday) {
+//   let year = "";
+//   for (let char of birthday) {
+//     if (char == "-") {
+//       break;
+//     }
+//     year += char;
+//   }
+
+//   return year;
+// }
+// console.log(calculateAge("2000-11-20"));
+function factorial(n) {
+  let result = 1;
+  while (n >= 1) {
+    result = result * n;
+    n--;
   }
+  console.log(result);
 }
-registerUser({ name: "Ajay", email: "" }); //asynch await
+factorial(5);
