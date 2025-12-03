@@ -21,6 +21,6 @@ void middlechar(String s){
 public static void main(String[] args){
         Demo6 d=new Demo6();
         d.factorial(3);
-        d.middlechar("hello");
-        d.middlechar("java");   
+        d.middlechar("Wonder");
+        d.middlechar("World");   
 }}
