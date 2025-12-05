@@ -348,12 +348,12 @@
 //   return year;
 // }
 // console.log(calculateAge("2000-11-20"));
-function factorial(n) {
-  let result = 1;
-  while (n >= 1) {
-    result = result * n;
-    n--;
-  }
-  console.log(result);
-}
-factorial(5);
+// function factorial(n) {
+//   let result = 1;
+//   while (n >= 1) {
+//     result = result * n;
+//     n--;
+//   }
+//   console.log(result);
+// }
+// factorial(5);
