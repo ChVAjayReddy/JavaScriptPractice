@@ -830,27 +830,95 @@
 //   }
 // }
 // retry(5);
-function megrintervals(arr) {
-  let res = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (res.length === 0) {
-      res.push(arr[i]);
-    } else {
-      let lastinterval = res[res.length - 1];
-      if (arr[i][0] <= lastinterval[1]) {
-        lastinterval[1] = Math.max(lastinterval[1], arr[i][1]);
-      } else {
-        res.push(arr[i]);
+// function megrintervals(arr) {
+//   let res = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (res.length === 0) {
+//       res.push(arr[i]);
+//     } else {
+//       let lastinterval = res[res.length - 1];
+//       if (arr[i][0] <= lastinterval[1]) {
+//         lastinterval[1] = Math.max(lastinterval[1], arr[i][1]);
+//       } else {
+//         res.push(arr[i]);
+//       }
+//     }
+//   }
+//   return res;
+// }
+// console.log(
+//   megrintervals([
+//     [1, 3],
+//     [2, 4],
+//     [6, 8],
+//     [9, 10],
+//   ])
+// );
+function findmissing(arr) {
+  let total = (arr.length * (arr.length + 1)) / 2;
+  let sum = 0;
+  for (let num of arr) {
+    sum += num;
+  }
+  return total - sum;
+}
+console.log(findmissing([3, 0, 1]));
+function longestsubstring(str) {
+  let sun = [];
+  let lenght = 0;
+  let maxlength;
+  for (let i = 0; i < str.length; i++) {
+    let count = {};
+    for (let j = i + 1; j <= str.length; j++) {
+      let temp = str.substring(i, j);
+      let res = true;
+      for (let c of temp) {
+        if (count[c]) {
+          res = false;
+        } else {
+          count[c] = 1;
+        }
+      }
+      if (res && lenght < temp.length) {
+        lenght = temp.length;
+        maxlength = temp;
       }
     }
   }
+  return maxlength;
+}
+console.log(longestsubstring("abcabcbb"));
+function groupanagrams(strs) {
+  let anagram = {};
+  for (let str of strs) {
+    let newstr = str.split("").sort().join("");
+    if (anagram[newstr]) {
+      anagram[newstr].push(str);
+    } else {
+      anagram[newstr] = [];
+      anagram[newstr].push(str);
+    }
+  }
+  return Object.values(anagram);
+}
+console.log(groupanagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
+function deepclone(obj) {
+  if (obj == null || typeof obj != "object") return obj;
+  let clone = Array.isArray(obj) ? [] : {};
+  for (let key in obj) {
+    clone[key] = deepclone(obj[key]);
+  }
+  return clone;
+}
+
+console.log(deepclone({ name: "ajay", details: { age: 17, city: "hyd" } }));
+function flatarray(arr) {
+  let res = [];
+  for (let item of arr) {
+    if (Array.isArray(item)) {
+      res.push(...flatarray(item));
+    } else res.push(item);
+  }
   return res;
 }
-console.log(
-  megrintervals([
-    [1, 3],
-    [2, 4],
-    [6, 8],
-    [9, 10],
-  ])
-);
+console.log(flatarray([1, 2, [1, 2, 5, [15, 8, 9]], 7, 8, 9]));
