@@ -5,13 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      input[type="text"],
-      input[type="date"],
-      input[type="tel"],
-      input[type="email"],
-      input[type="number"] {
-        width: 150px;
-      }
       option {
         width: 150px;
       }
@@ -28,11 +21,25 @@
       .box {
         width: 50%;
       }
+      input[type="text"],
+      input[type="date"],
+      input[type="tel"],
+      input[type="email"],
+      input[type="number"] {
+        width: 150px;
+      }
     </style>
   </head>
   <body>
     <div style="justify-self: center">
-      <div style="background-color: rgb(198, 224, 246)">
+      <div
+        style="
+          background-color: rgb(198, 224, 246);
+          border-radius: 10px;
+          padding: 10px;
+          text-align: center;
+        "
+      >
         <img
           height="100px"
           width="100px"
@@ -42,10 +49,11 @@
         <h1>Telangana State Road Transport Corporation</h1>
         <h3 style="text-align: center">General Bus Pass Application</h3>
       </div>
+      <br />
       <div>
         <form action="./regsucess.html">
           <fieldset style="width: 650px; margin-bottom: 20px">
-            <legend>Application Detailss</legend>
+            <legend>Application Details</legend>
             <div
               style="
                 display: flex;
@@ -151,7 +159,7 @@
             <label for="pin">Pincode</label>
             <input type="number" id="pin" />
           </fieldset>
-          <fieldset style="width: 600px; margin-bottom: 20px">
+          <fieldset style="width: 650px; margin-bottom: 20px">
             <legend>Pass Type Details</legend>
             <label for="city">City</label>
             <select>
@@ -166,7 +174,7 @@
               <option value="4">Handicapped Bus Pass</option>
             </select>
           </fieldset>
-          <fieldset style="width: 600px; margin-bottom: 20px">
+          <fieldset style="width: 650px; margin-bottom: 20px">
             <legend>Mode of Payment & Pass Collection</legend>
             <label for="payment">Payment Mode</label>
             <select>
