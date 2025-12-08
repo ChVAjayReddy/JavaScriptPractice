@@ -4,6 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      input[type="text"],
+      input[type="date"],
+      input[type="tel"],
+      input[type="email"],
+      input[type="number"] {
+        width: 150px;
+      }
+      option {
+        width: 150px;
+      }
+
+      label {
+        width: 100px;
+        display: inline-block;
+      }
+      #gender label {
+        width: auto;
+        display: inline-block;
+      }
+
+      .box {
+        width: 50%;
+      }
+    </style>
   </head>
   <body>
     <div style="justify-self: center">
@@ -18,80 +43,109 @@
         <h3 style="text-align: center">General Bus Pass Application</h3>
       </div>
       <div>
-        <form>
-          <fieldset style="width: 600px; margin-bottom: 20px">
+        <form action="./regsucess.html">
+          <fieldset style="width: 650px; margin-bottom: 20px">
             <legend>Application Detailss</legend>
-            <div style="display: flex; justify-content: space-between">
-              <label for="name">Name:</label>
-              <input type="text" id="name" name="user_name" />
-              <label for="name">Father's Name:</label>
-              <input type="text" id="fname" name="fathername" />
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+              "
+            >
+              <div class="box">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="user_name" />
+              </div>
+              <div class="box">
+                <label for="name">Father's Name:</label>
+                <input type="text" id="fname" name="fathername" />
+              </div>
             </div>
             <br />
-            <div style="display: flex; justify-content: space-between">
-              <label for="dob">Date of Birth</label>
-              <input type="date" id="dob" name="dob" />
-              <label for="gender">Gender</label>
-              <input type="radio" id="gender" name="gender" />
-              <label for="gender">Male</label>
-              <input type="radio" id="gender" name="gender" />
-              <label for="gender">Female</label>
+            <div style="display: flex; justify-content: space-evenly">
+              <div class="box">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" />
+              </div>
+              <div class="box">
+                <label for="gender">Gender</label>
+                <div id="gender" style="display: inline-block">
+                  <input type="radio" id="genderm" name="gender" />
+                  <label for="genderm">Male</label>
+                  <input type="radio" id="genderf" name="gender" />
+                  <label for="genderf">Female</label>
+                </div>
+              </div>
             </div>
             <br />
-            <div style="display: flex; justify-content: space-between">
-              <label for="age">Age as on:</label>
-              <input type="number" style="width: 20px" />
-              <label>Year(s)</label>
-              <input type="number" style="width: 20px" />
-              <label for="dob">Month(s)</label>
-              <input type="number" style="width: 20px" />
-              <label for="dob">Day(s)</label>
-              <input type="number" style="width: 20px" />
+            <div style="display: flex; justify-content: space-evenly">
+              <div class="box">
+                <label for="age">Age as on:</label>
 
-              <label for="aadhaar">Aadhaar</label>
-              <input type="text" id="aadhaar" />
+                <input type="number" />
+              </div>
+              <div class="box">
+                <label for="aadhaar">Aadhaar</label>
+                <input type="text" id="aadhaar" />
+              </div>
             </div>
             <br />
-            <div style="display: flex; justify-content: space-between">
-              <label for="whatsapp">Whatsapp No</label>
-              <input type="tel" id="whatsapp" />
-              <label for="email">Email :</label>
-              <input type="email" id="email" />
+            <div style="display: flex; justify-content: space-evenly">
+              <div class="box">
+                <label for="whatsapp">Whatsapp No</label>
+                <input type="tel" id="whatsapp" />
+              </div>
+              <div class="box">
+                <label for="email">Email :</label>
+                <input type="email" id="email" />
+              </div>
             </div>
             <br />
             <label for="photo">Photo :</label>
             <input type="file" id="photo" />
           </fieldset>
-          <fieldset style="width: 600px; margin-bottom: 20px">
+          <fieldset style="width: 650px; margin-bottom: 20px">
             <legend>Residential Address Details</legend>
-            <div style="display: flex; justify-content: space-between">
-              <label for="address">Applicant's Address</label>
-              <textarea></textarea>
-              <label for="distric">District</label>
-              <select>
-                <option value="hyd">Hyderabad</option>
-                <option value="gnt">Guntur</option>
-                <option value="bza">Vijayawada</option>
-                <option value="pkm">PRAKASAM</option>
-              </select>
+            <div style="display: flex; justify-content: space-evenly">
+              <div class="box">
+                <label for="address">Applicant's Address</label>
+                <textarea></textarea>
+              </div>
+              <div class="box">
+                <label for="distric">District</label>
+                <select>
+                  <option value="1" selected disabled>Select District</option>
+                  <option value="hyd">Hyderabad</option>
+                  <option value="gnt">Guntur</option>
+                  <option value="bza">Vijayawada</option>
+                  <option value="pkm">PRAKASAM</option>
+                </select>
+              </div>
             </div>
             <br /><br />
-            <div style="display: flex; justify-content: space-between">
-              <label for="mandal">Mandal</label>
+            <div style="display: flex; justify-content: space-evenly">
+              <div class="box">
+                <label for="mandal">Mandal</label>
 
-              <select>
-                <option value="1">Hyderabad</option>
-                <option value="2">Markapur</option>
-                <option value="3">Vijayawada</option>
-                <option value="4">PRAKASAM</option>
-              </select>
-              <label for="village">Village</label>
-              <select>
-                <option value="1">Hyderabad</option>
-                <option value="2">Markapur</option>
-                <option value="3">Vijayawada</option>
-                <option value="4">PRAKASAM</option>
-              </select>
+                <select>
+                  <option value="1" selected disabled>Select Mandal</option>
+                  <option value="1">Hyderabad</option>
+                  <option value="2">Markapur</option>
+                  <option value="3">Vijayawada</option>
+                  <option value="4">PRAKASAM</option>
+                </select>
+              </div>
+              <div class="box">
+                <label for="village">Village</label>
+                <select>
+                  <option value="1" selected disabled>Select Village</option>
+                  <option value="1">Hyderabad</option>
+                  <option value="2">Markapur</option>
+                  <option value="3">Vijayawada</option>
+                  <option value="4">PRAKASAM</option>
+                </select>
+              </div>
             </div>
             <br /><br />
             <label for="pin">Pincode</label>
@@ -105,6 +159,7 @@
             ><br /><br />
             <label for="type">Pass Type</label>
             <select>
+              <option value="1" selected disabled>Select Pass Type</option>
               <option value="1">Student Bus Pass</option>
               <option value="2">Employee Bus Pass</option>
               <option value="3">Senior Citizen Bus Pass</option>
@@ -113,13 +168,17 @@
           </fieldset>
           <fieldset style="width: 600px; margin-bottom: 20px">
             <legend>Mode of Payment & Pass Collection</legend>
-            <label for="payment">Mode of Payment</label>
+            <label for="payment">Payment Mode</label>
             <select>
+              <option value="1" selected disabled>Select Payment</option>
               <option value="1">Online Payment</option>
               <option value="2">Offline Payment</option></select
             ><br /><br />
             <label for="delivery">Pass Delivery Mode</label>
             <select>
+              <option value="1" selected disabled>
+                Select Pass Delivery Mode
+              </option>
               <option value="1">At Counter</option>
               <option value="2">By Post</option></select
             ><br /><br />
@@ -127,12 +186,40 @@
               >Center at which you want to collect pass</label
             >
             <select>
+              <option value="1" selected disabled>Select Center</option>
               <option value="1">Hyderabad</option>
               <option value="2">KPHB</option>
               <option value="3">JNTU</option>
               <option value="4">Miyapur</option>
             </select>
           </fieldset>
+          <div
+            style="display: flex; justify-content: center; align-items: center"
+          >
+            <img
+              height="50px"
+              width="100px"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtQHvFmxFaFSOT_FfpIXeMUTyyj8Tk1nZXCQEYzZHlP5B1oFvf"
+            />
+            <img
+              height="50px"
+              width="50px"
+              src="https://www.outsystems.com/Forge_CW/_image.aspx/Q8LvY--6WakOw9afDCuuGWGqLZ1s3F4sVbYW9RV7MZU=/new-recaptcha-2023-01-04%2000-00-00-2025-09-07%2005-54-27"
+            /><br /><br />
+            <label for="captcha">Enter the text shown :</label>
+            <input type="text" />
+          </div>
+          <br /><br />
+          <input
+            style="
+              justify-content: center;
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+            "
+            type="submit"
+            value="Submit Application"
+          />
         </form>
       </div>
     </div>
