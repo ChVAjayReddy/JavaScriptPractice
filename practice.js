@@ -854,71 +854,260 @@
 //     [9, 10],
 //   ])
 // );
-function findmissing(arr) {
-  let total = (arr.length * (arr.length + 1)) / 2;
-  let sum = 0;
-  for (let num of arr) {
-    sum += num;
-  }
-  return total - sum;
-}
-console.log(findmissing([3, 0, 1]));
-function longestsubstring(str) {
-  let sun = [];
-  let lenght = 0;
-  let maxlength;
-  for (let i = 0; i < str.length; i++) {
-    let count = {};
-    for (let j = i + 1; j <= str.length; j++) {
-      let temp = str.substring(i, j);
-      let res = true;
-      for (let c of temp) {
-        if (count[c]) {
-          res = false;
-        } else {
-          count[c] = 1;
-        }
-      }
-      if (res && lenght < temp.length) {
-        lenght = temp.length;
-        maxlength = temp;
-      }
-    }
-  }
-  return maxlength;
-}
-console.log(longestsubstring("abcabcbb"));
-function groupanagrams(strs) {
-  let anagram = {};
-  for (let str of strs) {
-    let newstr = str.split("").sort().join("");
-    if (anagram[newstr]) {
-      anagram[newstr].push(str);
-    } else {
-      anagram[newstr] = [];
-      anagram[newstr].push(str);
-    }
-  }
-  return Object.values(anagram);
-}
-console.log(groupanagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
-function deepclone(obj) {
-  if (obj == null || typeof obj != "object") return obj;
-  let clone = Array.isArray(obj) ? [] : {};
-  for (let key in obj) {
-    clone[key] = deepclone(obj[key]);
-  }
-  return clone;
-}
+// function findmissing(arr) {
+//   let total = (arr.length * (arr.length + 1)) / 2;
+//   let sum = 0;
+//   for (let num of arr) {
+//     sum += num;
+//   }
+//   return total - sum;
+// }
+// console.log(findmissing([3, 0, 1]));
+// function longestsubstring(str) {
+//   let sun = [];
+//   let lenght = 0;
+//   let maxlength;
+//   for (let i = 0; i < str.length; i++) {
+//     let count = {};
+//     for (let j = i + 1; j <= str.length; j++) {
+//       let temp = str.substring(i, j);
+//       let res = true;
+//       for (let c of temp) {
+//         if (count[c]) {
+//           res = false;
+//         } else {
+//           count[c] = 1;
+//         }
+//       }
+//       if (res && lenght < temp.length) {
+//         lenght = temp.length;
+//         maxlength = temp;
+//       }
+//     }
+//   }
+//   return maxlength;
+// }
+// console.log(longestsubstring("abcabcbb"));
+// function groupanagrams(strs) {
+//   let anagram = {};
+//   for (let str of strs) {
+//     let newstr = str.split("").sort().join("");
+//     if (anagram[newstr]) {
+//       anagram[newstr].push(str);
+//     } else {
+//       anagram[newstr] = [];
+//       anagram[newstr].push(str);
+//     }
+//   }
+//   return Object.values(anagram);
+// }
+// console.log(groupanagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
+// function deepclone(obj) {
+//   if (obj == null || typeof obj != "object") return obj;
+//   let clone = Array.isArray(obj) ? [] : {};
+//   for (let key in obj) {
+//     clone[key] = deepclone(obj[key]);
+//   }
+//   return clone;
+// }
 
-console.log(deepclone({ name: "ajay", details: { age: 17, city: "hyd" } }));
-function flatarray(arr) {
-  let res = [];
-  for (let item of arr) {
-    if (Array.isArray(item)) {
-      res.push(...flatarray(item));
-    } else res.push(item);
-  }
-  return res;
+// console.log(deepclone({ name: "ajay", details: { age: 17, city: "hyd" } }));
+// function flatarray(arr) {
+//   let res = [];
+//   for (let item of arr) {
+//     if (Array.isArray(item)) {
+//       res.push(...flatarray(item));
+//     } else res.push(item);
+//   }
+//   return res;
+// }
+// console.log(flatarray([1, 2, [1, 2, 5, [15, 8, 9]], 7, 8, 9]));
+// function palindrome(str) {
+//   let newstr = str
+//     .split("")
+//     .filter((char) => char != " ")
+//     .join("")
+//     .toLowerCase();
+//   let str1 = newstr.split("").reverse().join("");
+//   return newstr === str1;
+// }
+// console.log(palindrome("A man a plan a canal Panama"));
+// function wait(ms) {
+//   return new Promise((resolve) => setTimeout(resolve, ms));
+// }
+
+// async function run() {
+//   console.log("Start");
+//   await wait(1000);
+//   console.log("End after 1 sec");
+// }
+
+// run();
+// async function fetchSequential() {
+//   const a = await fetch(
+//     "https://www.themealdb.com/api/json/v1/1/filter.php?i={meals}"
+//   );
+//   const b = await fetch(
+//     "https://www.themealdb.com/api/json/v1/1/filter.php?i={meals}"
+//   );
+//   const c = await fetch(
+//     "https://www.themealdb.com/api/json/v1/1/filter.php?i={meals}"
+//   );
+
+//   return [a, b, c];
+// }
+// fetchSequential();
+// function unstableAPI() {
+//   return new Promise((resolve, reject) =>
+//     Math.random() > 0.9 ? resolve("Success") : reject("Fail")
+//   );
+// }
+
+// async function retry(fn, attempts) {
+//   for (let i = 1; i <= attempts; i++) {
+//     try {
+//       return await fn();
+//     } catch (err) {
+//       console.log(`Attempt ${i} failed`);
+//     }
+//   }
+//   throw new Error("API Failed after retries");
+// }
+
+// retry(unstableAPI, 3);
+
+// function rotate(arr, k) {
+//   let n = arr.length;
+//   k = k % n;
+//   console.log(k);
+
+//   let rotated = [];
+//   let index = 0;
+
+//   // Step 1: Copy last k elements into the new array
+//   for (let i = n - k; i < n; i++) {
+//     rotated[index++] = arr[i];
+//   }
+
+//   // Step 2: Copy first n-k elements next
+//   for (let i = 0; i < n - k; i++) {
+//     rotated[index++] = arr[i];
+//   }
+
+//   return rotated;
+// }
+
+// console.log(rotate([1, 2, 3, 4, 5], 3));
+// // Output: [4,5,1,2,3]
+// let arr = [1, 2, 3, 4, 5];
+// console.log(arr.slice(-2));
+// let str = "ajay rEEEddy";
+// console.log(
+//   str
+//     .split(" ")
+//     .map((word) => {
+//       return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+//     })
+//     .join(" ")
+// );
+// let k = 2;
+// let n = arr.length;
+// let index = 0;
+// let rotateaa = [];
+// for (let i = n - k; i < n; i++) {
+//   rotateaa[index++] = arr[i];
+// }
+// for (let i = 0; i < n - k; i++) {
+//   rotateaa[index++] = arr[i];
+// }
+// console.log(rotateaa);
+// let str1 = "1,2,3,4,5";
+// let newstr = str1.split(",");
+// for (let i = 0; i < newstr.length; i++) {
+//   newstr[i] = Number(newstr[i]);
+// }
+//1️⃣ Palindrome Check (Ignore spaces & case)
+function ispalindrome(str) {
+  return (
+    str.replaceAll(" ", "").toLowerCase() ==
+    str.replaceAll(" ", "").toLowerCase().split("").reverse().join("")
+  );
 }
-console.log(flatarray([1, 2, [1, 2, 5, [15, 8, 9]], 7, 8, 9]));
+console.log(
+  ispalindrome("A man a plan a canal Panama") ? "Palindrome" : "Not Palindrome"
+);
+//2️⃣ Find the Second Largest Number
+function secondlargest() {
+  let largest = -Infinity;
+  let secondlargest = -Infinity;
+}
+console.log(secondlargest([10, 30, 20, 50, 40]));
+//3️⃣ Count Words in a Sentence
+function countwords(str) {
+  return str.split(" ").length;
+}
+console.log(countwords("I love JavaScript"));
+//5️⃣ Check if Two Arrays Are Equal
+function istwoarraysequal(arr1, arr2) {
+  if (arr1.length !== arr2.length) return false;
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) return false;
+  }
+  return true;
+}
+console.log(istwoarraysequal([1, 2, 3], [1, 2, 3]) ? "Equal" : "Not Equal");
+//6️⃣ Find Intersection of Two Arrays
+function intersection(arr1, arr2) {
+  let result = [];
+  let count = {};
+  for (let num of arr1) {
+    count[num] = true;
+  }
+  for (let num of arr2) {
+    if (count[num]) result.push(num);
+  }
+  return result;
+}
+console.log(intersection([1, 2, 3, 4], [2, 4, 6]));
+//7️⃣ Capitalize First Letter of Each Word
+function capitalise(str) {
+  return str
+    .split(" ")
+    .map((word) => {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(" ");
+}
+console.log(capitalise("i am learning javascript"));
+//8️⃣ Count Occurrences of Each Number
+function CountOccurrencesofEachNumber(arr) {
+  let count = {};
+  for (let num of arr) {
+    count[num] = (count[num] || 0) + 1;
+  }
+  return count;
+}
+console.log(CountOccurrencesofEachNumber([1, 2, 2, 3, 3, 3]));
+//9️⃣ Return Unique Elements (without Set)
+function UniqueElements(arr) {
+  let map = new Map();
+  let unique = [];
+  for (let num of arr) {
+    map.set(num, map.has(num) ? map.get(num) + 1 : 1);
+  }
+  for (let [key, value] of map) {
+    unique.push(key);
+  }
+  return unique;
+}
+console.log(UniqueElements([1, 2, 2, 3, 4, 4]));
+//🔟 Reverse Each Word in a Sentence
+function reversewors(str) {
+  return str
+    .split(" ")
+    .map((word) => {
+      return word.split("").reverse().join("");
+    })
+    .join(" ");
+}
+console.log(reversewors("hello world"));
