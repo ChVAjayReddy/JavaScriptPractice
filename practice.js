@@ -1027,87 +1027,87 @@
 //   newstr[i] = Number(newstr[i]);
 // }
 //1️⃣ Palindrome Check (Ignore spaces & case)
-function ispalindrome(str) {
-  return (
-    str.replaceAll(" ", "").toLowerCase() ==
-    str.replaceAll(" ", "").toLowerCase().split("").reverse().join("")
-  );
-}
-console.log(
-  ispalindrome("A man a plan a canal Panama") ? "Palindrome" : "Not Palindrome"
-);
-//2️⃣ Find the Second Largest Number
-function secondlargest() {
-  let largest = -Infinity;
-  let secondlargest = -Infinity;
-}
-console.log(secondlargest([10, 30, 20, 50, 40]));
-//3️⃣ Count Words in a Sentence
-function countwords(str) {
-  return str.split(" ").length;
-}
-console.log(countwords("I love JavaScript"));
-//5️⃣ Check if Two Arrays Are Equal
-function istwoarraysequal(arr1, arr2) {
-  if (arr1.length !== arr2.length) return false;
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) return false;
-  }
-  return true;
-}
-console.log(istwoarraysequal([1, 2, 3], [1, 2, 3]) ? "Equal" : "Not Equal");
-//6️⃣ Find Intersection of Two Arrays
-function intersection(arr1, arr2) {
-  let result = [];
-  let count = {};
-  for (let num of arr1) {
-    count[num] = true;
-  }
-  for (let num of arr2) {
-    if (count[num]) result.push(num);
-  }
-  return result;
-}
-console.log(intersection([1, 2, 3, 4], [2, 4, 6]));
-//7️⃣ Capitalize First Letter of Each Word
-function capitalise(str) {
-  return str
-    .split(" ")
-    .map((word) => {
-      return word.charAt(0).toUpperCase() + word.slice(1);
-    })
-    .join(" ");
-}
-console.log(capitalise("i am learning javascript"));
-//8️⃣ Count Occurrences of Each Number
-function CountOccurrencesofEachNumber(arr) {
-  let count = {};
-  for (let num of arr) {
-    count[num] = (count[num] || 0) + 1;
-  }
-  return count;
-}
-console.log(CountOccurrencesofEachNumber([1, 2, 2, 3, 3, 3]));
-//9️⃣ Return Unique Elements (without Set)
-function UniqueElements(arr) {
-  let map = new Map();
-  let unique = [];
-  for (let num of arr) {
-    map.set(num, map.has(num) ? map.get(num) + 1 : 1);
-  }
-  for (let [key, value] of map) {
-    unique.push(key);
-  }
-  return unique;
-}
-console.log(UniqueElements([1, 2, 2, 3, 4, 4]));
-//🔟 Reverse Each Word in a Sentence
-function reversewors(str) {
-  return str
-    .split(" ")
-    .map((word) => {
-      return word.split("").reverse().join("");
-    })
-    .join(" ");
-}
-console.log(reversewors("hello world"));
+// function ispalindrome(str) {
+//   return (
+//     str.replaceAll(" ", "").toLowerCase() ==
+//     str.replaceAll(" ", "").toLowerCase().split("").reverse().join("")
+//   );
+// }
+// console.log(
+//   ispalindrome("A man a plan a canal Panama") ? "Palindrome" : "Not Palindrome"
+// );
+// //2️⃣ Find the Second Largest Number
+// function secondlargest() {
+//   let largest = -Infinity;
+//   let secondlargest = -Infinity;
+// }
+// console.log(secondlargest([10, 30, 20, 50, 40]));
+// //3️⃣ Count Words in a Sentence
+// function countwords(str) {
+//   return str.split(" ").length;
+// }
+// console.log(countwords("I love JavaScript"));
+// //5️⃣ Check if Two Arrays Are Equal
+// function istwoarraysequal(arr1, arr2) {
+//   if (arr1.length !== arr2.length) return false;
+//   for (let i = 0; i < arr1.length; i++) {
+//     if (arr1[i] !== arr2[i]) return false;
+//   }
+//   return true;
+// }
+// console.log(istwoarraysequal([1, 2, 3], [1, 2, 3]) ? "Equal" : "Not Equal");
+// //6️⃣ Find Intersection of Two Arrays
+// function intersection(arr1, arr2) {
+//   let result = [];
+//   let count = {};
+//   for (let num of arr1) {
+//     count[num] = true;
+//   }
+//   for (let num of arr2) {
+//     if (count[num]) result.push(num);
+//   }
+//   return result;
+// }
+// console.log(intersection([1, 2, 3, 4], [2, 4, 6]));
+// //7️⃣ Capitalize First Letter of Each Word
+// function capitalise(str) {
+//   return str
+//     .split(" ")
+//     .map((word) => {
+//       return word.charAt(0).toUpperCase() + word.slice(1);
+//     })
+//     .join(" ");
+// }
+// console.log(capitalise("i am learning javascript"));
+// //8️⃣ Count Occurrences of Each Number
+// function CountOccurrencesofEachNumber(arr) {
+//   let count = {};
+//   for (let num of arr) {
+//     count[num] = (count[num] || 0) + 1;
+//   }
+//   return count;
+// }
+// console.log(CountOccurrencesofEachNumber([1, 2, 2, 3, 3, 3]));
+// //9️⃣ Return Unique Elements (without Set)
+// function UniqueElements(arr) {
+//   let map = new Map();
+//   let unique = [];
+//   for (let num of arr) {
+//     map.set(num, map.has(num) ? map.get(num) + 1 : 1);
+//   }
+//   for (let [key, value] of map) {
+//     unique.push(key);
+//   }
+//   return unique;
+// }
+// console.log(UniqueElements([1, 2, 2, 3, 4, 4]));
+// //🔟 Reverse Each Word in a Sentence
+// function reversewors(str) {
+//   return str
+//     .split(" ")
+//     .map((word) => {
+//       return word.split("").reverse().join("");
+//     })
+//     .join(" ");
+// }
+// console.log(reversewors("hello world"));
