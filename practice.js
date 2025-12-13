@@ -1111,3 +1111,14 @@
 //     .join(" ");
 // }
 // console.log(reversewors("hello world"));
+function movezerostoend(arr) {
+  let left = 0;
+  for (let right = 0; right < arr.length; right++) {
+    if (arr[right] !== 0) {
+      [arr[left], arr[right]] = [arr[right], arr[left]];
+      left++;
+    }
+  }
+  return arr;
+}
+console.log(movezerostoend([1, 2, 0, 8, 9, 6, 0, 0, 9]));
