@@ -357,3 +357,234 @@
 //   console.log(result);
 // }
 // factorial(5);
+
+// async function getdata() {
+//   return "Ajay";
+// }
+// const data = getdata();
+// data.then((es) => console.log(es));
+// function fetchData() {
+//   return new Promise((resolve) =>
+//     setTimeout(() => resolve("Data fetched"), 1000)
+//   );
+// }
+
+// fetchData()
+//   .then((data) => {
+//     console.log(data);
+//     return "Processing data";
+//   })
+//   .then((result) => console.log(result))
+//   .catch((err) => console.log(err));
+// async function getData() {
+//   try {
+//     const data = await fetchData();
+//     console.log(data);
+//   } catch {}
+// }
+
+//2️⃣ Sequential API Calls (Order Matters)
+// function task1() {
+//   return new Promise((res) => setTimeout(() => res("Task 1"), 1000));
+// }
+// function task2() {
+//   return new Promise((res) => setTimeout(() => res("Task 2"), 1000));
+// }
+// function task3() {
+//   return new Promise((res) => setTimeout(() => res("Task 3"), 1000));
+// }
+// async function seqenceaAPI() {
+//   try {
+//     const data1 = await task1();
+//     console.log(data1);
+
+//     const data2 = await task2();
+//     console.log(data2);
+
+//     const data3 = await task2();
+//     console.log(data3);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
+// seqenceaAPI();
+// //3️⃣ Parallel Execution using Promise.all
+// async function parallelExecution() {
+//   try {
+//     const data = await Promise.all([task1(), task2(), task3()]);
+//     console.log(data);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
+// parallelExecution();
+
+// //4️⃣ Retry Promise on Failure
+// function unstableAPI() {
+//   return new Promise((resolve, reject) => {
+//     Math.random() > 0.7 ? resolve("Success") : reject("Failed");
+//   });
+// }
+// async function retryPromise(retries) {
+//   for (let i = 1; i <= retries; i++) {
+//     try {
+//       const data = await unstableAPI();
+//       console.log(data);
+//       return;
+//     } catch (error) {
+//       console.error(error);
+//     }
+//   }
+// }
+// retryPromise(4);
+
+// //5️⃣ Async Delay Function
+// function delay(ms) {
+//   return new Promise((resolve, reject) => setTimeout(() => resolve("End"), ms));
+// }
+// async function delayfn(ms) {
+//   try {
+//     console.log("Start");
+//     const data = await delay(ms);
+//     console.log(data);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
+// delayfn(2000);
+//Q1️⃣ Remove Duplicates but Keep LAST Occurrence
+//Q2️⃣ Find First Non-Repeating Character
+function nonrepeatchar(str) {
+  let count = new Map();
+  for (let char of str) {
+    count.set(char, count.has(char) ? count.get(char) + 1 : 1);
+  }
+  for (const [key, value] of count) {
+    if (value === 1) return key;
+  }
+}
+console.log(nonrepeatchar("javascript"));
+//Q3️⃣ Two Sum (Indexes)
+function twosum(arr, target) {
+  let num = {};
+  for (let i = 0; i < arr.length; i++) {
+    let diff = target - arr[i];
+    if (diff in num) {
+      return [i, num[diff]];
+    }
+    num[arr[i]] = i;
+  }
+}
+console.log(twosum([2, 7, 11, 15], 9));
+//Q4️⃣ Flatten Nested Array (No flat())
+function FlattenArray(arr) {
+  let result = [];
+  for (let num of arr) {
+    if (Array.isArray(num)) {
+      result.push(...FlattenArray(num));
+    } else {
+      result.push(num);
+    }
+  }
+  return result;
+}
+console.log(FlattenArray([1, [2, [3, 4], 5], 6]));
+//Q5️⃣ Longest Word in Sentence
+function longest(str) {
+  return str.split(" ").reduce((acc, curr) => {
+    if (acc.length < curr.length) acc = curr;
+    return acc;
+  }, "");
+}
+console.log(longest("I am learning JavaScript"));
+//Q6️⃣ Count Frequency of Elements
+function countFrequency(arr) {
+  let count = {};
+  for (let num of arr) {
+    count[num] = (count[num] || 0) + 1;
+  }
+  return count;
+}
+console.log(countFrequency([1, 2, 2, 3, 3, 3]));
+//Q7️⃣ Check Anagram
+function isAnagram(str1, str2) {
+  let count = {};
+  for (let char of str1) {
+    count[char] = (count[char] || 0) + 1;
+  }
+  for (let char of str2) {
+    if (!count[char]) return false;
+    count[char] = count[char] - 1;
+    if (count[char] === 0) delete count[char];
+  }
+  return Object.keys(count).length === 0 ? true : false;
+}
+console.log(isAnagram("listen", "silent"));
+//Q8️⃣ Move All Zeros to End (In-place)
+function movezeros(arr) {
+  let left = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== 0) {
+      [arr[i], arr[left]] = [arr[left], arr[i]];
+      left++;
+    }
+  }
+
+  return arr;
+}
+console.log(movezeros([0, 1, 0, 3, 12]));
+//Q9️⃣ Find Missing Number (0 to N)
+function findmissing(arr) {
+  let sum = 0;
+  let totalsum = (arr.length * (arr.length + 1)) / 2;
+  for (let num of arr) {
+    sum += num;
+  }
+  return totalsum - sum;
+}
+console.log(findmissing([3, 0, 1]));
+//Q🔟 Reverse Each Word (Order Same)
+function reversestr(str) {
+  return str
+    .split(" ")
+    .map((word) => {
+      return word.split("").reverse().join("");
+    })
+    .join(" ");
+}
+console.log(reversestr("I love JavaScript"));
+
+//Q3️⃣ Merge Two Sorted Arrays (Without sort())
+function merge() {}
+let ar = [1, 2, 3];
+console.log(ar.toString());
+const originalObj = {
+  name: "Alice",
+  details: { age: 30, hobbies: ["coding", "hiking"] },
+};
+function deepclone(value) {
+  // 1️⃣ Base condition (primitive values)
+  if (value === null || typeof value !== "object") {
+    return value;
+  }
+
+  // 2️⃣ Handle Date
+  if (value instanceof Date) {
+    return new Date(value);
+  }
+
+  // 3️⃣ Handle Array
+  if (Array.isArray(value)) {
+    return value.map((item) => deepclone(item));
+  }
+
+  // 4️⃣ Handle Object
+  const clonedObj = {};
+  for (let key in value) {
+    clonedObj[key] = deepclone(value[key]);
+  }
+
+  return clonedObj;
+}
+
+console.log(deepclone(originalObj));
