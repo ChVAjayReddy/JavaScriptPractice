@@ -725,42 +725,78 @@
 // }
 // asyncdelay(10000);
 //🔥 Q1. Async Task Queue (Sequential Execution)
-function task(ms, value) {
-  return new Promise((resolve) => setTimeout(() => resolve(value), ms));
-}
-runSequential([
-  () => task(1000, "A"),
-  () => task(500, "B"),
-  () => task(300, "C"),
-]);
-async function runSequential(tasks) {
-  for (let i = 0; i < tasks.length; i++) {
-    try {
-      const data = await tasks[i]();
-      console.log(data);
-    } catch (err) {
-      console.error(err);
+// function task(ms, value) {
+//   return new Promise((resolve) => setTimeout(() => resolve(value), ms));
+// }
+// runSequential([
+//   () => task(1000, "A"),
+//   () => task(500, "B"),
+//   () => task(300, "C"),
+// ]);
+// async function runSequential(tasks) {
+//   for (let i = 0; i < tasks.length; i++) {
+//     try {
+//       const data = await tasks[i]();
+//       console.log(data);
+//     } catch (err) {
+//       console.error(err);
+//     }
+//   }
+// }
+// //🔥 Q2. Concurrency Limit (Very Common in Interviews)
+// function task(ms, value) {
+//   return new Promise((resolve) => setTimeout(() => resolve(value), ms));
+// }
+// const tasks = [
+//   () => task(1000, "A"),
+//   () => task(500, "B"),
+//   () => task(300, "C"),
+//   () => task(400, "D"),
+// ];
+// async function runWithLimit(tasks, limit) {
+//   for (let i = 0; i < limit; i++) {
+//     try {
+//       const data = await tasks[i]();
+//       console.log(data);
+//     } catch (err) {
+//       console.error(err);
+//     }
+//   }
+// }
+// runWithLimit(tasks, 2);
+function DetectNumbersfromJumbledCharacters(numchars) {
+  let num = [
+    "zero",
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+  ];
+  let res = [];
+  let arr = numchars.split("");
+  console.log(arr);
+  for (let i = 0; i < 10; i++) {
+    let cont = 0;
+    for (let char of num[i]) {
+      if (arr.indexOf(char)) {
+        let temp = arr.indexOf(char);
+        arr.splice(temp, 1);
+
+        cont++;
+      }
+    }
+
+    if (cont === num[i].length) {
+      res.push(i);
     }
   }
+
+  return res;
 }
-//🔥 Q2. Concurrency Limit (Very Common in Interviews)
-function task(ms, value) {
-  return new Promise((resolve) => setTimeout(() => resolve(value), ms));
-}
-const tasks = [
-  () => task(1000, "A"),
-  () => task(500, "B"),
-  () => task(300, "C"),
-  () => task(400, "D"),
-];
-async function runWithLimit(tasks, limit) {
-  for (let i = 0; i < limit; i++) {
-    try {
-      const data = await tasks[i]();
-      console.log(data);
-    } catch (err) {
-      console.error(err);
-    }
-  }
-}
-runWithLimit(tasks, 2);
+
+console.log(DetectNumbersfromJumbledCharacters("onexotw"));
