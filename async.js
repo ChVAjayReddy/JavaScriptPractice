@@ -1566,44 +1566,51 @@ console.log(DetectNumbersfromJumbledCharacters("onexotw"));
 //   }
 // }
 // runWithLimit(tasks, 2);
-function DetectNumbersfromJumbledCharacters(numchars) {
-  let num = [
-    "zero",
-    "one",
-    "two",
-    "three",
-    "four",
-    "five",
-    "six",
-    "seven",
-    "eight",
-    "nine",
-  ];
-  let res = [];
-  let arr = numchars.split("");
-  console.log(arr);
-  for (let i = 0; i < 10; i++) {
-    let cont = 0;
-    for (let char of num[i]) {
-      if (arr.indexOf(char)) {
-        let temp = arr.indexOf(char);
-        arr.splice(temp, 1);
+// function DetectNumbersfromJumbledCharacters(numchars) {
+//   let num = [
+//     "zero",
+//     "one",
+//     "two",
+//     "three",
+//     "four",
+//     "five",
+//     "six",
+//     "seven",
+//     "eight",
+//     "nine",
+//   ];
+//   let res = [];
+//   let arr = numchars.split("");
+//   console.log(arr);
+//   for (let i = 0; i < 10; i++) {
+//     let cont = 0;
+//     for (let char of num[i]) {
+//       if (arr.indexOf(char)) {
+//         let temp = arr.indexOf(char);
+//         arr.splice(temp, 1);
 
-        cont++;
-      }
-    }
+//         cont++;
+//       }
+//     }
 
-    if (cont === num[i].length) {
-      res.push(i);
-    }
-  }
+//     if (cont === num[i].length) {
+//       res.push(i);
+//     }
+//   }
 
-  return res;
+//   return res;
+// }
+
+// console.log(DetectNumbersfromJumbledCharacters("onexotw"));
+// function task() {
+//   return new Promise((resolve, reject) =>
+//     Math.random() > 1.5 ? resolve("Success 1") : reject("Fail")
+//   );
+// }
+function rotatearray(arr, k) {
+  k = k % arr.length;
+  let part1 = arr.slice(-k);
+  let part2 = arr.slice(0, arr.length - k);
+  return part1.concat(part2);
 }
-
-console.log(DetectNumbersfromJumbledCharacters("onexotw"));
-function task() {
-  return new Promise((resolve, reject) =>
-    Math.random() > 1.5 ? resolve("Success 1") : reject("Fail")
-  );
-}
+console.log(rotatearray([1, 2, 3, 4, 5, 6, 7], 3));
