@@ -94,6 +94,11 @@
               </li>
             </ul>
           </div>
+          <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </div>
     </header>
@@ -296,6 +301,127 @@
         </div>
       </div>
     </div>
+    <div class="testimonials-section">
+      <div class="testimonials-container">
+        <p class="testimonials-label">Testimonials</p>
+        <h2 class="testimonials-heading">Client testimonials</h2>
+      </div>
+      <div class="testimonials-content">
+        <div class="testimonial-card">
+          <img
+            src="https://jevelin.shufflehound.com/corporate-accounting/wp-content/uploads/sites/32/2019/10/testimonials-client1.jpg"
+            alt="Arnold Oak"
+            class="testimonial-image"
+          />
+          <p class="testimonial-text">
+            Now is the winter of our discontent. Made glorious summer by this
+            sun of York. And all the clouds that lour'd upon our house. In the
+            deep bosom of the ocean buried.
+          </p>
+          <h4 class="testimonial-name">Arnold Oak</h4>
+          <p class="testimonial-position">Oak corporation co-founder</p>
+        </div>
+        <div class="testimonial-card">
+          <img
+            src="https://jevelin.shufflehound.com/corporate-accounting/wp-content/uploads/sites/32/2019/10/testimonials-client2.png"
+            alt="Amber Grassling"
+            class="testimonial-image"
+          />
+          <p class="testimonial-text">
+            Now is the winter of our discontent. Made glorious summer by this
+            sun of York. And all the clouds that lour'd upon our house. In the
+            deep bosom of the ocean buried.
+          </p>
+          <h4 class="testimonial-name">Amber Grassling</h4>
+          <p class="testimonial-position">Grassling corporation co-founder</p>
+        </div>
+      </div>
+    </div>
+    <div class="clients">
+      <img
+        src="https://jevelin.shufflehound.com/corporate-accounting/wp-content/uploads/sites/32/2019/10/partner3.png"
+        alt="Partner 3"
+      />
+      <img
+        src="https://jevelin.shufflehound.com/corporate-accounting/wp-content/uploads/sites/32/2019/10/partner1.png"
+        alt="Partner 1"
+      />
+      <img
+        src="https://jevelin.shufflehound.com/corporate-accounting/wp-content/uploads/sites/32/2019/10/partner5.png"
+        alt="Partner 5"
+      />
+      <img
+        src="https://jevelin.shufflehound.com/corporate-accounting/wp-content/uploads/sites/32/2019/10/partner2.png"
+        alt="Partner 2"
+      />
+      <img
+        src="https://jevelin.shufflehound.com/corporate-accounting/wp-content/uploads/sites/32/2019/10/partner6.png"
+        alt="Partner 6"
+      />
+      <img
+        src="https://jevelin.shufflehound.com/corporate-accounting/wp-content/uploads/sites/32/2019/10/partner2.png"
+        alt="Partner 2"
+      />
+    </div>
+    <div class="price-section">
+      <div class="price-container">
+        <p class="price-label">Price list</p>
+        <h2 class="price-title">We price accordingly</h2>
+      </div>
+      <div class="price-table-wrapper">
+        <table class="price-table">
+          <tr>
+            <th>Document count</th>
+            <th>Price</th>
+          </tr>
+
+          <tbody>
+            <tr>
+              <td>1 – 30</td>
+              <td>40,00 €</td>
+            </tr>
+            <tr>
+              <td>31 – 50</td>
+              <td>60,00 €</td>
+            </tr>
+            <tr>
+              <td>51 – 70</td>
+              <td>100,00 €</td>
+            </tr>
+            <tr>
+              <td>71 – 100</td>
+              <td>130,00 €</td>
+            </tr>
+            <tr>
+              <td>101 – 130</td>
+              <td>150,00 €</td>
+            </tr>
+            <tr>
+              <td>131 – 160</td>
+              <td>200,00 €</td>
+            </tr>
+            <tr>
+              <td>161 – 180</td>
+              <td>230,00 €</td>
+            </tr>
+            <tr>
+              <td>181 – 200</td>
+              <td>260,00 €</td>
+            </tr>
+            <tr>
+              <td>201 – 230</td>
+              <td>300,00 €</td>
+            </tr>
+            <tr>
+              <td>231 – ...</td>
+              <td>Custom Pricing</td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="price-button">Contact us</button>
+      </div>
+    </div>
+
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-column">
@@ -310,7 +436,6 @@
             >
               <div
                 style="
-                  background: linear-gradient(135deg, #3366ff 0%, #2451cc 100%);
                   width: 40px;
                   height: 40px;
                   border-radius: 6px;
@@ -320,13 +445,14 @@
                   color: white;
                   font-weight: 800;
                   font-size: 24px;
+                  margin-left: 80px;
                 "
               >
-                ⓣ
+                <img
+                  src="https://jevelin.shufflehound.com/corporate-accounting/wp-content/uploads/sites/32/2019/10/logo.png"
+                  alt="Footer Logo"
+                />
               </div>
-              <span style="font-weight: 700; font-size: 18px; color: #1a1a1a"
-                >jevelin <span style="color: #888">accounting</span></span
-              >
             </div>
           </div>
           <p class="footer-desc">
@@ -367,5 +493,24 @@
         </div>
       </div>
     </footer>
+    <script>
+      document
+        .getElementById("mobileMenuToggle")
+        .addEventListener("click", function () {
+          const headerList = document.querySelector(".header-list");
+          headerList.classList.toggle("active");
+          this.classList.toggle("active");
+        });
+
+      // Close menu when a link is clicked
+      document.querySelectorAll(".header-list-list a").forEach((link) => {
+        link.addEventListener("click", function () {
+          const headerList = document.querySelector(".header-list");
+          const menuToggle = document.getElementById("mobileMenuToggle");
+          headerList.classList.remove("active");
+          menuToggle.classList.remove("active");
+        });
+      });
+    </script>
   </body>
 </html>
