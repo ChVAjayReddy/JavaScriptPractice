@@ -954,7 +954,6 @@
   padding: 6px 10px;
 }
 
-/* Ensure achievements doesn't overlap following sections on small screens */
 @media (max-width: 768px) {
   .achivements {
     padding: 40px 12px 20px;
@@ -1807,7 +1806,6 @@ tr {
     font-size: 13px;
   }
 
-  /* Safety overrides to prevent overlap between sections on small screens */
   .achivements {
     margin-bottom: 24px;
   }
