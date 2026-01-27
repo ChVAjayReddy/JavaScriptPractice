@@ -241,7 +241,6 @@
     display: none;
   }
 
-  /* Mobile Menu Toggle */
   .mobile-menu-toggle {
     display: flex;
     flex-direction: column;
