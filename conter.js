@@ -11,3 +11,4 @@ const counter = createCounter();
 counter();
 counter();
 counter();
+counter();
