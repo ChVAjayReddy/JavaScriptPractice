@@ -1,60 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <style>
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      /* grid-template-rows: repeat(2, 150px); */
-      gap: 15px;
-      grid-template-areas:
-        "a a a"
-        "b c c"
-        "d e f";
-      padding: 20px;
-    }
-
-    .grid-item {
-      background-color: lightblue;
-      border: 2px solid red;
-      text-align: center;
-      font-size: 1.5rem;
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .grid-item.item1 {
-      grid-area: a;
-    }
-    .grid-item.item2 {
-      grid-area: b;
-    }
-    .grid-item.item3 {
-      grid-area: c;
-    }
-    .grid-item.item4 {
-      grid-area: d;
-    }
-    .grid-item.item5 {
-      grid-area: e;
-    }
-    .grid-item.item6 {
-      grid-area: f;
-    }
-  </style>
   <body>
-    <div class="grid-container">
-      <div class="grid-item item1">Item 1</div>
-      <div class="grid-item item2">Item 2</div>
-      <div class="grid-item item3">Item 3</div>
-      <div class="grid-item item4">Item 4</div>
-      <div class="grid-item item5">Item 5</div>
-      <div class="grid-item item6">Item 6</div>
+    <div
+      style="
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1fr);
+        gap: 10px;
+        border: 2px solid black;
+        padding: 10px;
+        align-content: flex-end;
+        height: 100vh;
+      "
+    >
+      <div style="background-color: lightblue; padding: 20px; margin: 5px">
+        Item 1
+      </div>
+      <div style="background-color: lightblue; padding: 20px; margin: 5px">
+        Item 1
+      </div>
+      <div style="background-color: lightblue; padding: 20px; margin: 5px">
+        Item 1
+      </div>
+      <div style="background-color: lightblue; padding: 20px; margin: 5px">
+        Item 1
+      </div>
+      <div style="background-color: lightblue; padding: 20px; margin: 5px">
+        Item 1
+      </div>
+      <div style="background-color: lightblue; padding: 20px; margin: 5px">
+        Item 1
+      </div>
+      <div style="background-color: lightblue; padding: 20px; margin: 5px">
+        Item 1
+      </div>
+      <div style="background-color: lightblue; padding: 20px; margin: 5px">
+        Item 1
+      </div>
+      <div style="background-color: lightblue; padding: 20px; margin: 5px">
+        Item 1
+      </div>
+      <div style="background-color: lightblue; padding: 20px; margin: 5px">
+        Item 1
+      </div>
+      <div style="background-color: lightblue; padding: 20px; margin: 5px">
+        Item 1
+      </div>
+      <div style="background-color: lightblue; padding: 20px; margin: 5px">
+        Item 1
+      </div>
     </div>
   </body>
 </html>
