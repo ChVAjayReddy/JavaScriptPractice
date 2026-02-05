@@ -4,56 +4,80 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 100px;
+        height: 50px;
+        text-align: center;
+      }
+    </style>
   </head>
+
   <body>
     <div
       style="
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(1fr);
+        grid-template-columns: minmax(200px, 1fr) minmax(100px, 1fr);
         gap: 10px;
         border: 2px solid black;
         padding: 10px;
-        align-content: flex-end;
-        height: 100vh;
       "
     >
-      <div style="background-color: lightblue; padding: 20px; margin: 5px">
-        Item 1
-      </div>
-      <div style="background-color: lightblue; padding: 20px; margin: 5px">
-        Item 1
-      </div>
-      <div style="background-color: lightblue; padding: 20px; margin: 5px">
-        Item 1
-      </div>
-      <div style="background-color: lightblue; padding: 20px; margin: 5px">
-        Item 1
-      </div>
-      <div style="background-color: lightblue; padding: 20px; margin: 5px">
-        Item 1
-      </div>
-      <div style="background-color: lightblue; padding: 20px; margin: 5px">
-        Item 1
-      </div>
-      <div style="background-color: lightblue; padding: 20px; margin: 5px">
-        Item 1
-      </div>
-      <div style="background-color: lightblue; padding: 20px; margin: 5px">
-        Item 1
-      </div>
-      <div style="background-color: lightblue; padding: 20px; margin: 5px">
-        Item 1
-      </div>
-      <div style="background-color: lightblue; padding: 20px; margin: 5px">
-        Item 1
-      </div>
-      <div style="background-color: lightblue; padding: 20px; margin: 5px">
-        Item 1
-      </div>
-      <div style="background-color: lightblue; padding: 20px; margin: 5px">
-        Item 1
-      </div>
+      <div style="width: 100px; background-color: aqua">Item</div>
+      <div style="width: 100px; background-color: aqua">Item</div>
+      <div style="width: 100px; background-color: aqua">Item</div>
+      <div style="width: 100px; background-color: aqua">Item</div>
+      <div style="width: 100px; background-color: aqua">Item</div>
+      <div style="width: 100px; background-color: aqua">Item</div>
+      <div style="width: 100px; background-color: aqua">Item</div>
+      <div style="width: 100px; background-color: aqua">Item</div>
+      <div style="width: 100px; background-color: aqua">Item</div>
+      <div style="width: 100px; background-color: aqua">Item</div>
+      <div style="width: 100px; background-color: aqua">Item</div>
+      <div style="width: 100px; background-color: aqua">Item</div>
+      <div style="width: 100px; background-color: aqua">Item</div>
+      <div style="width: 100px; background-color: aqua">Item</div>
+      <div style="width: 100px; background-color: aqua">Item</div>
+      <div style="width: 100px; background-color: aqua">Item</div>
+      <div style="width: 100px; background-color: aqua">Item</div>
+      <div style="width: 100px; background-color: aqua">Item</div>
+      <div style="width: 100px; background-color: aqua">Item</div>
+      <div style="width: 100px; background-color: aqua">Item</div>
+      <div style="width: 100px; background-color: aqua">Item</div>
+      <div style="width: 100px; background-color: aqua">Item</div>
+      <div style="width: 100px; background-color: aqua">Item</div>
     </div>
+    <table>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <table>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
   </body>
 </html>
