@@ -764,42 +764,42 @@
 //   }
 // }
 // runWithLimit(tasks, 2);
-function DetectNumbersfromJumbledCharacters(numchars) {
-  let num = [
-    "zero",
-    "one",
-    "two",
-    "three",
-    "four",
-    "five",
-    "six",
-    "seven",
-    "eight",
-    "nine",
-  ];
-  let res = [];
-  let arr = numchars.split("");
-  console.log(arr);
-  for (let i = 0; i < 10; i++) {
-    let cont = 0;
-    for (let char of num[i]) {
-      if (arr.indexOf(char)) {
-        let temp = arr.indexOf(char);
-        arr.splice(temp, 1);
+// function DetectNumbersfromJumbledCharacters(numchars) {
+//   let num = [
+//     "zero",
+//     "one",
+//     "two",
+//     "three",
+//     "four",
+//     "five",
+//     "six",
+//     "seven",
+//     "eight",
+//     "nine",
+//   ];
+//   let res = [];
+//   let arr = numchars.split("");
+//   console.log(arr);
+//   for (let i = 0; i < 10; i++) {
+//     let cont = 0;
+//     for (let char of num[i]) {
+//       if (arr.indexOf(char)) {
+//         let temp = arr.indexOf(char);
+//         arr.splice(temp, 1);
 
-        cont++;
-      }
-    }
+//         cont++;
+//       }
+//     }
 
-    if (cont === num[i].length) {
-      res.push(i);
-    }
-  }
+//     if (cont === num[i].length) {
+//       res.push(i);
+//     }
+//   }
 
-  return res;
-}
+//   return res;
+// }
 
-console.log(DetectNumbersfromJumbledCharacters("onexotw"));
+// console.log(DetectNumbersfromJumbledCharacters("onexotw"));
 // // function waits(ms) {
 // //   return new Promise((resolve, reject) =>
 // //     setTimeout(
@@ -1607,10 +1607,161 @@ console.log(DetectNumbersfromJumbledCharacters("onexotw"));
 //     Math.random() > 1.5 ? resolve("Success 1") : reject("Fail")
 //   );
 // }
-function rotatearray(arr, k) {
-  k = k % arr.length;
-  let part1 = arr.slice(-k);
-  let part2 = arr.slice(0, arr.length - k);
-  return part1.concat(part2);
+// function rotatearray(arr, k) {
+//   k = k % arr.length;
+//   let part1 = arr.slice(-k);
+//   let part2 = arr.slice(0, arr.length - k);
+//   return part1.concat(part2);
+// }
+// console.log(rotatearray([1, 2, 3, 4, 5, 6, 7], 3));
+// function revString(str) {
+//   let rev = "";
+//   for (let i = str.length - 1; i >= 0; i--) {
+//     rev += str[i];
+//   }
+//   return rev;
+// }
+// console.log(revString("ajay"));
+
+// function isPrime(num) {
+//   for (let i = 2; i <= Math.sqrt(num); i++) {
+//     if (num % i == 0) return "Not a Prime";
+//   }
+//   return "Prime";
+// }
+// console.log(isPrime(531));
+// function isPalindrome(str) {
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] != str[str.length - 1 - i]) return "Not a Palindrome";
+//   }
+//   return "Palindrome";
+// }
+// console.log(isPalindrome("madam"));
+
+// function factorial(num) {
+//   let res = 1;
+
+//   for (let i = num; i >= 2; i--) {
+//     res *= i;
+//   }
+//   return res;
+// }
+// console.log(factorial(5));
+
+// function secondLargest(arr) {
+//   let max = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] > max) max = arr[i];
+//   }
+//   let min;
+//   let value;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (i == 0) {
+//       min = max - arr[i];
+//       value = arr[i];
+//     } else {
+//       if (max - arr[i] != 0 && max - arr[i] < min) {
+//         min = max - arr[i];
+//         value = arr[i];
+//       }
+//     }
+//   }
+//   return value;
+// }
+// console.log(secondLargest([2, 3, 4, 5, 6, 7, 1, 19, 10, 20, 11, 17]));
+// let aj = new Map();
+
+// const inventory = new Map();
+
+// // Add items with .set()
+// inventory.set("apples", 500);
+// inventory.set("bananas", 300);
+// inventory.set("oranges", 200);
+// console.log(inventory.size);
+// let a = {
+//   name: "Ajay",
+//   age: 24,
+//   hobbies: ["coding", "hiking"],
+//   Qualification: "M.Tech",
+// };
+// console.log(a);
+// function countchar(str) {
+//   let count = {};
+//   for (let char of str) {
+//     count[char] = (count[char] || 0) + 1;
+//   }
+//   return count;
+// }
+// console.log(countchar("ajayreddy"));
+// let b = {
+//   name: "A",
+//   age: 24,
+//   hobbies: ["coding", "hiking"],
+//   Qualification: "B.Tech",
+// };
+
+// const fusedObject = { ...a, ...b };
+// console.log(fusedObject);
+// let name = "Ajay";
+// console.log(name.split("").reverse().join(" ,"));
+let arr1 = [6, 7, 8, 9, 10];
+let arr2 = [1, 2, 3, 4, 5];
+let arr3 = [15, 14, 9965, 76];
+console.log([...arr1, ...arr2, ...arr3].sort((a, b) => b - a));
+function reverseString(str) {
+  return str.split(" ").reverse().join(" ");
 }
-console.log(rotatearray([1, 2, 3, 4, 5, 6, 7], 3));
+console.log(reverseString("I love React"));
+function NonRepeatingCharacter(str) {
+  let obj = new Map();
+  for (let char of str) {
+    obj.set(char, obj.has(char) ? obj.get(char) + 1 : 1);
+  }
+  for (const [key, value] of obj) {
+    if (value === 1) return key;
+  }
+}
+console.log(NonRepeatingCharacter("aabbcdeff"));
+
+function Anagrams(str1, str2) {
+  let obj = new Map();
+  for (let char of str1) {
+    obj.set(char, obj.has(char) ? obj.get(char) + 1 : 1);
+  }
+
+  for (let char of str2) {
+    obj.set(char, obj.has(char) ? obj.get(char) - 1 : 1);
+  }
+  console.log(obj);
+  for (const [key, value] of obj) {
+    if (value != 0) return "Not Anagrams";
+  }
+  return "Anagrams";
+}
+console.log(Anagrams("listen", "silent"));
+
+function removeDuplicatefromArray(arr) {
+  let count = {};
+  for (let num of arr) {
+    count[num] = (count[num] || 0) + 1;
+  }
+  return Object.keys(count);
+}
+console.log(removeDuplicatefromArray([1, 2, 2, 3, 4, 4, 5]));
+function LongestWordinaSentence(str) {
+  return str.split(" ").sort((a, b) => b.length - a.length)[0];
+}
+console.log(LongestWordinaSentence("I am learning JavaScript deeply"));
+
+function GroupAnagrams(arr) {
+  let obj = new Map();
+  for (let str of arr) {
+    let sorted = str.split("").sort().join("");
+    if (!obj.has(sorted)) {
+      obj.set(sorted, []);
+    }
+    obj.get(sorted).push(str);
+  }
+  return Array.from(obj.values());
+}
+console.log(GroupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
