@@ -1765,3 +1765,26 @@ function GroupAnagrams(arr) {
   return Array.from(obj.values());
 }
 console.log(GroupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
+let arr = [1, 2, 3, 4, 5];
+let sum = 0;
+for (let num of arr) {
+  sum += num;
+}
+console.log(sum);
+
+function deleteduplicatesfromSortedArray(arr) {
+  let unique = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== arr[i + 1]) {
+      unique.push(arr[i]);
+    }
+  }
+  return unique;
+}
+let k = [1, 2, 3, 4, 5, 6, 7];
+console.log(k.map((num) => num * 2));
+console.log(k.map((num) => num - 10));
+let newarr = k.filter((num) => num / 2 == 0);
+const numbers = [1, 2, 3, 4, 5];
+const evens = numbers.filter((n) => n % 2 != 0);
+console.log(evens);
